@@ -1,0 +1,15 @@
+{
+    "name": "vendor/teste01",
+    "description": "Description of project teste01.",
+    "authors": [
+        {
+            "name": "alan",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "v6.2.0",
+        "vlucas/phpdotenv": "dev-master",
+        "phpmailer/phpmailer": "dev-master"
+    }
+}
