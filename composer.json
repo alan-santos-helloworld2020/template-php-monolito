@@ -10,6 +10,12 @@
     "require": {
         "firebase/php-jwt": "v6.2.0",
         "vlucas/phpdotenv": "dev-master",
-        "phpmailer/phpmailer": "dev-master"
+        "phpmailer/phpmailer": "dev-master",
+        "twig/twig": "^3.0"
+    },
+    "autoload":{
+        "classmap":[
+         "classes/"
+        ]
     }
 }

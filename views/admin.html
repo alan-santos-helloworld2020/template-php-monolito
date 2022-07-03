@@ -1,0 +1,37 @@
+{% extends "layouts/default.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 table-responsive">
+            <table class="table table-sm table-striped  text-center">
+                <thead class="bg-opacity-75 text-success">
+                    <tr>
+                        <th>Id</th>
+                        <th>Paciente</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for keys,ds in dados %}
+                    <tr>
+                        <th>{{ds.id}}</th>
+                        <th>{{ds.paciente}}</th>
+                        <th>{{ds.telefone}}</th>
+                        <th>{{ds.email}}</th>
+                        <th>{{ds.data}}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

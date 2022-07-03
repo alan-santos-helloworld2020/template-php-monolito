@@ -1,21 +1,23 @@
-<?php include './auth/auth.php'; ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <?php include './header/header.php'; ?>
-        <title>Onload-Home</title>
-    </head>
-    <body>
-        <?php include './navegador/navegador.php'; ?>
-        
-        <div class="row">
-            <div class="col-12 d-flex justify-content-end align-items-center">
+<?php
 
-            </div>
-            <p class="fw-bold text-center h-100">Admin</p>
-        </div>
+session_start();
+include './auth/auth.php';
 
-        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="./js/script.js"></script>
-    </body>
-</html>
+require_once './vendor/autoload.php';
+
+$loader = new \Twig\Loader\FilesystemLoader('./views/');
+$twig = new \Twig\Environment($loader, [
+    'cache' => './views/cache/',
+    'cache' => false
+        ]);
+$template = $twig->load('admin.html');
+
+$dados= file_get_contents("http://localhost:3000/");
+
+echo $template->render([
+            "title" => "Admin",
+            "username"=>$_SESSION['username'],
+            "dados"=> json_decode($dados)
+        ]);
+
+
